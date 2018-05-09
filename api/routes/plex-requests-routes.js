@@ -10,4 +10,8 @@ module.exports = function(app) {
   app.route(`${prefix}/tv/:id`)
     .get(requestControllers.getTvId)
     .post(requestControllers.postTvId);
+
+  app.route(`${prefix}/tv/:id/season/:seasonId`)
+    .get(requestControllers.getTvSeasonId)
+    .post(requestControllers.postTvSeasonId);
 };

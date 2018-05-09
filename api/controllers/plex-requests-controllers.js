@@ -3,7 +3,9 @@ exports.getMovieId = function(req, res) {
 }
 
 exports.postMovieId = function(req, res) {
-  res.send('postMovieId');
+  const message = `the movie that has been requested: ${req.params.id}`;
+  res.send(message);
+  console.log(message);
 }
 
 exports.getTvId = function(req, res) {
@@ -11,5 +13,17 @@ exports.getTvId = function(req, res) {
 }
 
 exports.postTvId = function(req, res) {
-  res.send('postTvId');
+  const message = `the show that has been requested: ${req.params.id}`;
+  res.send(message);
+  console.log(message);
+}
+
+exports.getTvSeasonId = function(req, res) {
+  res.send('getTvSeasonId');
+}
+
+exports.postTvSeasonId = function(req, res) {
+  const message = `the show ID that has been requested: ${req.params.id} (SeasonID): ${req.params.seasonId}`;
+  res.send(message);
+  console.log(message);
 }
