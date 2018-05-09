@@ -3,15 +3,15 @@ module.exports = function(app) {
   const prefix = '/v1';
 
   app.route(`${prefix}/movie/:id`)
-    .get(requestControllers.getMovieId)
-    .post(requestControllers.postMovieId);
+    .get(requestControllers.listMovieId)
+    .post(requestControllers.addMovieId);
 
 
   app.route(`${prefix}/tv/:id`)
-    .get(requestControllers.getTvId)
-    .post(requestControllers.postTvId);
+    .get(requestControllers.listTvId)
+    .post(requestControllers.addTvId);
 
   app.route(`${prefix}/tv/:id/season/:seasonId`)
-    .get(requestControllers.getTvSeasonId)
-    .post(requestControllers.postTvSeasonId);
+    .get(requestControllers.listTvSeasonId)
+    .post(requestControllers.addTvSeasonId);
 };
