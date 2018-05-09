@@ -1,12 +1,13 @@
-postmodule.exports = function(app) {
-  var requestControllers = require('../controllers/plex-requests-controllers');
+module.exports = function(app) {
+  var requestControllers = require(`../controllers/plex-requests-controllers`);
+  const prefix = '/v1';
 
-  app.route('/movie/:id')
+  app.route(`${prefix}/movie/:id`)
     .get(requestControllers.getMovieId)
     .post(requestControllers.postMovieId);
 
 
-  app.route('/tv/:id')
+  app.route(`${prefix}/tv/:id`)
     .get(requestControllers.getTvId)
-    .post(requestControllers.sendTvId);
+    .post(requestControllers.postTvId);
 };
