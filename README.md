@@ -8,10 +8,10 @@ This gives the users of my Plex server the ability to requests their own media.
 
 `v1/movie/:id`
 
-The movie path accepts an id, this id is to match [the MovieDB](https://www.themoviedb.org/) ID.
+The movie path expects an id, this id is to match [the MovieDB](https://www.themoviedb.org/) ID.
 
 - GET requests: The api will return a list of movieDB ID's.
-- POST requests: The api will add the provided ID to it's list. 
+- POST requests: The api will add the provided ID to it's list.
 
 ### TV
 
@@ -22,8 +22,8 @@ The tv path expects the same [Movie DB](https://www.themoviedb.org/) ID as speci
 - GET requests: The api will return a list of movieDB ID's.
 - POST requests: The api will add the provided ID to it's list.
 
-### TV Seasons 
+### TV Seasons
 
 `v1/tv/:id/series/:seriesId`
 
-The same behaviour is applied, though for a specific season of a TV show. 
+The same behaviour is applied, though for a specific season of a TV show.
