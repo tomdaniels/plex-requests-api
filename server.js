@@ -2,7 +2,7 @@ var express = require('express'),
   app = express(),
   port = process.env.PORT || 3000;
 
-const router = require('./api/routes/plex-requests-routes');
+const router = require('./src/routes/plex-requests-routes');
 
 router(app);
 
