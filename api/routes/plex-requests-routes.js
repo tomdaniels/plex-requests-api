@@ -1,5 +1,5 @@
 module.exports = function(app) {
-  var requestControllers = require(`../controllers/plex-requests-controllers`);
+  var requestControllers = require(`../middleware/plex-requests-controllers`);
   const prefix = '/v1';
 
   app.route(`${prefix}/movie/:id`)
