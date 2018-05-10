@@ -1,7 +1,9 @@
 # plex-requests-api
 
-An api to store requested movies from [Plex Requests](http://requests.tomd.io).
-This gives the users of my Plex server the ability to requests their own media.
+An api to store requested movies from the [Plex Requests Client](http://requests.tomd.io). ([view code](https://github.com/tomdaniels/plex-requests-client))
+
+
+This gives the users of my Plex server the ability to request their own media.
 
 
 ### Movies
