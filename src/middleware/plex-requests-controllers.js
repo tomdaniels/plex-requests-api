@@ -1,5 +1,5 @@
 exports.listMovieId = function(req, res) {
-  res.send('getMovieId');
+  res.send('get list of movie ID\'s from database (somewhere)');
 }
 
 exports.addMovieId = function(req, res) {
@@ -9,7 +9,7 @@ exports.addMovieId = function(req, res) {
 }
 
 exports.listTvId = function(req, res) {
-  res.send('getTvId');
+  res.send('get list of TV ID\'s from database (somewhere)');
 }
 
 exports.addTvId = function(req, res) {
@@ -19,7 +19,7 @@ exports.addTvId = function(req, res) {
 }
 
 exports.listTvSeasonId = function(req, res) {
-  res.send('getTvSeasonId');
+  res.send('get list of TV/SEASON ID\'s from database (somewhere)');
 }
 
 exports.addTvSeasonId = function(req, res) {
