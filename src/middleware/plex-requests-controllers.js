@@ -1,3 +1,7 @@
+exports.getAll = function(req, res) {
+  res.send('list all movie ID\'s');
+}
+
 exports.listMovieId = function(req, res) {
   res.send('get list of movie ID\'s from database (somewhere)');
 }
