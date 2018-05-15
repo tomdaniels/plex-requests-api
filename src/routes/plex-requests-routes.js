@@ -2,6 +2,13 @@ module.exports = function(app) {
   var requestControllers = require(`../middleware/plex-requests-controllers`);
   const prefix = '/v1';
 
+  app.use(function(req, res, next) {
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+    next();
+  });
+
   app.route(`${prefix}/media`)
     .get(requestControllers.getAll)
 
