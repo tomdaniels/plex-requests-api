@@ -10,7 +10,6 @@ exports.listMovieId = function(req, res) {
 
 exports.addMovieId = function(req, res) {
   const message = `the movie that has been requested: ${req.params.id}`;
-  database.ref('movies').push(req.params.id);
   res.send(message);
   console.log(message);
 }
