@@ -23,7 +23,6 @@ exports.addMovieId = function(req, res) {
   const message = `the movie that has been requested: ${req.params.id}`;
   database.ref('movies').push(req.params.id);
   res.send(message);
-  console.log(message);
 };
 
 exports.listTvShows = function(req, res) {
@@ -34,23 +33,23 @@ exports.listTvShows = function(req, res) {
 
 exports.addTvId = function(req, res) {
   const message = `the show that has been requested: ${req.params.id}`;
-  database.ref('tv').push(req.params.id);
+  database.ref('tv').push({
+    tvId: req.params.id,
+  });
   res.send(message);
-  console.log(message);
 };
 
 exports.listTvSeasons = function(req, res) {
-  database.ref('tv/seasons').once('value').then((snapshot) => {
+  database.ref('seasons').once('value').then((snapshot) => {
     getMedia(snapshot.val(), res);
   }).catch((error) => console.log(error));
 };
 
 exports.addTvSeasonId = function(req, res) {
   const message = `the show ID that has been requested: ${req.params.id} (SeasonID): ${req.params.seasonId}`;
-  database.ref('tv/seasons').push({
+  database.ref('seasons').push({
     show: req.params.id,
     season: req.params.seasonId,
   });
   res.send(message);
-  console.log(message);
 };
