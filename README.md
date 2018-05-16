@@ -1,31 +1,16 @@
 # plex-requests-api
 
-An api to store requested movies from the [Plex Requests Client](http://requests.tomd.io) website. ([view code](https://github.com/tomdaniels/plex-requests-client))
+A restful Nodejs api to store requested movies from the [Plex Requests Client](http://requests.tomd.io) website. ([view code](https://github.com/tomdaniels/plex-requests-client))
 
 
-This gives the users of my Plex server the ability to request their own media.
+###How to use it? 
+| MEDIA   | GET         | RESULT                                                    | POST                  | RESULT                                       |
+|---------|-------------|-----------------------------------------------------------|-----------------------|----------------------------------------------|
+| Movies  | `v1/movies` | returns array of object, with movie ID's                  | `v1/movies/:id`       | Stores that Movie ID into Database           |
+| TV      | `v1/tv `     | returns array of object, with TV show ID's                | `v1/tv/:id`           | Stores that TV Show ID into Database         |
+| Seasons | `v1/season` | returns array of object, with ID's for individual seasons | `v1/tv/:id/:seasonId` | Stores that specific season ID into Database |
 
 
-### Movies
+### Get all
 
-`v1/movie/:id`
-
-The movie path expects an id, this id is to match [the MovieDB](https://www.themoviedb.org/) ID.
-
-- GET requests: The api will return a list of movieDB ID's.
-- POST requests: The api will add the provided ID to it's list.
-
-### TV
-
-`v1/tv/:id`
-
-The tv path expects the same [Movie DB](https://www.themoviedb.org/) ID as specified above.
-
-- GET requests: The api will return a list of movieDB ID's.
-- POST requests: The api will add the provided ID to it's list.
-
-### TV Seasons
-
-`v1/tv/:id/series/:seriesId`
-
-The same behaviour is applied, though for a specific season of a TV show.
+A get requests with `v1/media` will return the entire available dataset.
