@@ -4,6 +4,7 @@ A restful Nodejs api to store requested movies from the [Plex Requests Client](h
 
 
 ###How to use it? 
+
 | MEDIA   | GET         | RESULT                                                    | POST                  | RESULT                                       |
 |---------|-------------|-----------------------------------------------------------|-----------------------|----------------------------------------------|
 | Movies  | `v1/movies` | returns array of object, with movie ID's                  | `v1/movies/:id`       | Stores that Movie ID into Database           |
