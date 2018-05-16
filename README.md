@@ -8,10 +8,10 @@ base-URL: http://requests-api.tomd.io
 
 | MEDIA TYPE |     PATH    |                           RESULT                          |
 |:----------:|:-----------:|:---------------------------------------------------------:|
+|    All     |  `v1/media` |          returns all available data in DB                  |
 |   Movies   | `v1/movies` |          returns array of object, with movie ID's         |
 |     TV     |    `v1/tv`   |         returns array of object, with TV show ID's        |
 |   Seasons  | `v1/seasons` | returns array of object, with ID's for individual seasons |
-|    All     |  `v1/media` |          returns all available data in DB                  |
 
 ## POST method
 
