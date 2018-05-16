@@ -20,3 +20,12 @@ base-URL: http://requests-api.tomd.io
 |   Movies   | `v1/movies/:id` |          pushes the requested movies ID into Movie DB        |
 |     TV     |    `v1/tv/:id`   |         pushes the requested TV show ID into the TV DB        |
 |   Seasons  | `v1/tv/:id/season/:seasonId` | pushes the individual season ID that was requested, with the show it belongs to into the TV DB |
+
+## Delete method
+
+| MEDIA    |PATH    |                           RESULT                          |
+|----------|-----------|---------------------------------------------------------|
+|    All     |  `v1/media-resolved` |          removes all available data in DB                  |
+|   Movies   | `v1/movies-resolved` |          removes all children of the movie DB         |
+|     TV     |    `v1/tv-resolved`   |         removes all children of the TV show DB        |
+|   Seasons  | `v1/seasons-resolved` | removes all children of the Seasons DB |
