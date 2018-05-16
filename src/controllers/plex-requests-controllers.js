@@ -53,3 +53,47 @@ exports.addTvSeasonId = function(req, res) {
   });
   res.send(message);
 };
+
+exports.clearAllMedia = function(req, res) {
+  database.ref('/').remove().then((response) => {
+    res.send('All media on the database has been removed');
+  }).catch((error) => {
+    res.send({
+      error,
+    });
+    console.log(error);
+  });;
+};
+
+exports.clearMovies = function(req, res) {
+  database.ref('movies').remove().then((response) => {
+    res.send('Movies database has been cleared!');
+  }).catch((error) => {
+    res.send({
+      error,
+    });
+    console.log(error);
+  });;
+};
+
+exports.clearTv = function(req, res) {
+  database.ref('tv').remove().then((response) => {
+    res.send('the TV Shows database has been cleared!');
+  }).catch((error) => {
+    res.send({
+      error,
+    });
+    console.log(error);
+  });
+};
+
+exports.clearSeasons = function(req, res) {
+  database.ref('seasons').remove().then((response) => {
+    res.send('Seaasons database has been cleared!');
+  }).catch((error) => {
+    res.send({
+      error,
+    });
+    console.log(error);
+  });
+};

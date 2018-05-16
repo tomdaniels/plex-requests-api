@@ -30,4 +30,16 @@ module.exports = function(app) {
 
   app.route(`${prefix}/tv/:id/season/:seasonId`)
     .post(requestControllers.addTvSeasonId);
+
+  app.route(`${prefix}/media-resolved`)
+    .delete(requestControllers.clearAllMedia);
+
+  app.route(`${prefix}/movies-resolved`)
+    .delete(requestControllers.clearMovies);
+
+  app.route(`${prefix}/tv-resolved`)
+    .delete(requestControllers.clearTv);
+
+  app.route(`${prefix}/seasons-resolved`)
+    .delete(requestControllers.clearSeasons);
 };
