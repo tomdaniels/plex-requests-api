@@ -1,34 +1,49 @@
 const database = require('../firebase/firebase');
 
-exports.getAll = function(req, res) {
-  res.send('list all movie ID\'s');
-}
+function getMedia(apiData, response) {
+  const media = [];
+  const data = apiData;
+  media.push(data);
+  response.send(media);
+};
 
-exports.listMovieId = function(req, res) {
-  res.send('get list of movie ID\'s from database (somewhere)');
-}
+exports.getAll = function(req, res) {
+  database.ref('/').once('value').then((snapshot) => {
+    getMedia(snapshot.val(), res);
+  }).catch((error) => console.log(error));
+};
+
+exports.listMovies = function(req, res, next) {
+  database.ref('movies').once('value').then((snapshot) => {
+    getMedia(snapshot.val(), res);
+  }).catch((error) => console.log(error));
+};
 
 exports.addMovieId = function(req, res) {
   const message = `the movie that has been requested: ${req.params.id}`;
   database.ref('movies').push(req.params.id);
   res.send(message);
   console.log(message);
-}
+};
 
-exports.listTvId = function(req, res) {
-  res.send('get list of TV ID\'s from database (somewhere)');
-}
+exports.listTvShows = function(req, res) {
+  database.ref('tv').once('value').then((snapshot) => {
+    getMedia(snapshot.val(), res);
+  }).catch((error) => console.log(error));
+};
 
 exports.addTvId = function(req, res) {
   const message = `the show that has been requested: ${req.params.id}`;
   database.ref('tv').push(req.params.id);
   res.send(message);
   console.log(message);
-}
+};
 
-exports.listTvSeasonId = function(req, res) {
-  res.send('get list of TV/SEASON ID\'s from database (somewhere)');
-}
+exports.listTvSeasons = function(req, res) {
+  database.ref('tv/seasons').once('value').then((snapshot) => {
+    getMedia(snapshot.val(), res);
+  }).catch((error) => console.log(error));
+};
 
 exports.addTvSeasonId = function(req, res) {
   const message = `the show ID that has been requested: ${req.params.id} (SeasonID): ${req.params.seasonId}`;
@@ -38,4 +53,4 @@ exports.addTvSeasonId = function(req, res) {
   });
   res.send(message);
   console.log(message);
-}
+};
