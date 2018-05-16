@@ -9,15 +9,14 @@ base-URL: http://requests-api.tomd.io
 | MEDIA TYPE |     PATH    |                           RESULT                          |
 |:----------:|:-----------:|:---------------------------------------------------------:|
 |    All     |  `v1/media` |          returns all available data in DB                  |
-|   Movies   | `v1/movies` |          returns array of object, with movie ID's         |
-|     TV     |    `v1/tv`   |         returns array of object, with TV show ID's        |
-|   Seasons  | `v1/seasons` | returns array of object, with ID's for individual seasons |
+|   Movies   | `v1/movies` |          returns an array of objects, containing stored movie ID's         |
+|     TV     |    `v1/tv`   |         returns an array of objects, containing stored TV show ID's        |
+|   Seasons  | `v1/seasons` | returns an array of objects, with ID's for individual seasons and the TV show they belong to. |
 
 ## POST method
 
 | MEDIA TYPE |     PATH    |                           RESULT                          |
 |:----------:|:-----------:|:---------------------------------------------------------:|
-|   Movies   | `v1/movies/:id` |          pushes the supplied ID's into Movie DB        |
-|     TV     |    `v1/tv/:id`   |         pushes the supplied ID's into TV DB        |
-|   Seasons  | `v1/tv/:id/season/:seasonId` | pushes the individual Season ID's into TV DB |
-
+|   Movies   | `v1/movies/:id` |          pushes the requested movies ID into Movie DB        |
+|     TV     |    `v1/tv/:id`   |         pushes the requested TV show ID into the TV DB        |
+|   Seasons  | `v1/tv/:id/season/:seasonId` | pushes the individual season ID that was requested, with the show it belongs to into the TV DB |
