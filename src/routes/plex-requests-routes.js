@@ -14,19 +14,19 @@ module.exports = function(app) {
     .get(requestControllers.getAll);
 
   app.route(`${prefix}/movies`)
-    .get(requestControllers.listMovieId);
+    .get(requestControllers.listMovies);
 
   app.route(`${prefix}/movie/:id`)
     .post(requestControllers.addMovieId);
 
   app.route(`${prefix}/tv`)
-    .get(requestControllers.listTvId);
+    .get(requestControllers.listTvShows);
 
   app.route(`${prefix}/tv/:id`)
     .post(requestControllers.addTvId);
 
   app.route(`${prefix}/seasons`)
-    .get(requestControllers.listTvSeasonId);
+    .get(requestControllers.listTvSeasons);
 
   app.route(`${prefix}/tv/:id/season/:seasonId`)
     .post(requestControllers.addTvSeasonId);
