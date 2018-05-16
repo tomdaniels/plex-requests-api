@@ -2,10 +2,9 @@
 
 A restful Nodejs api to store requested movies from the [Plex Requests Client](http://requests.tomd.io) website. ([view code](https://github.com/tomdaniels/plex-requests-client))
 
-
-##GET Method:
-
 base-URL: http://requests-api.tomd.io
+
+GET Method:
 
 | MEDIA TYPE |     PATH    |                           RESULT                          |
 |:----------:|:-----------:|:---------------------------------------------------------:|
@@ -14,9 +13,7 @@ base-URL: http://requests-api.tomd.io
 |   Seasons  | `v1/seasons` | returns array of object, with ID's for individual seasons |
 |    All     |  `v1/media` |          returns all available data in DB                  |
 
-##POST method:
-
-base-URL: http://requests-api.tomd.io
+POST method:
 
 | MEDIA TYPE |     PATH    |                           RESULT                          |
 |:----------:|:-----------:|:---------------------------------------------------------:|
