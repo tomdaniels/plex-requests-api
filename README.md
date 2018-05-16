@@ -7,7 +7,7 @@ base-URL: http://requests-api.tomd.io
 ## GET method
 
 | MEDIA TYPE |     PATH    |                           RESULT                          |
-|:----------:|:-----------:|:---------------------------------------------------------:|
+|----------|-----------|---------------------------------------------------------|
 |    All     |  `v1/media` |          returns all available data in DB                  |
 |   Movies   | `v1/movies` |          returns an array of objects, containing stored movie ID's         |
 |     TV     |    `v1/tv`   |         returns an array of objects, containing stored TV show ID's        |
