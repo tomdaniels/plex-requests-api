@@ -3,15 +3,20 @@
 A restful Nodejs api to store requested movies from the [Plex Requests Client](http://requests.tomd.io) website. ([view code](https://github.com/tomdaniels/plex-requests-client))
 
 
-###How to use it? 
+###GET Method:
 
-| MEDIA   | GET         | RESULT                                                    | POST                  | RESULT                                       |
-|---------|-------------|-----------------------------------------------------------|-----------------------|----------------------------------------------|
-| Movies  | `v1/movies` | returns array of object, with movie ID's                  | `v1/movies/:id`       | Stores that Movie ID into Database           |
-| TV      | `v1/tv `     | returns array of object, with TV show ID's                | `v1/tv/:id`           | Stores that TV Show ID into Database         |
-| Seasons | `v1/season` | returns array of object, with ID's for individual seasons | `v1/tv/:id/:seasonId` | Stores that specific season ID into Database |
+| MEDIA TYPE |     PATH    |                           RESULT                          |
+|:----------:|:-----------:|:---------------------------------------------------------:|
+|   Movies   | `v1/movies` |          returns array of object, with movie ID's         |
+|     TV     |    `v1/tv`   |         returns array of object, with TV show ID's        |
+|   Seasons  | `v1/season` | returns array of object, with ID's for individual seasons |
+|    All     |  `v1/media` |          returns all available data in DB                  |
 
+###POST method:
 
-### Get all
+| MEDIA TYPE |     PATH    |                           RESULT                          |
+|:----------:|:-----------:|:---------------------------------------------------------:|
+|   Movies   | `v1/movies/:id` |          pushes the supplied ID's into Movie DB        |
+|     TV     |    `v1/tv/:id`   |         pushes the supplied ID's into TV DB        |
+|   Seasons  | `v1/tv/:id/season/:seasonId` | pushes the individual Season ID's into TV DB |
 
-A get requests with `v1/media` will return the entire available dataset.
