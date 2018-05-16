@@ -6,7 +6,7 @@ base-URL: http://requests-api.tomd.io
 
 ## GET method
 
-| MEDIA |     PATH    |                           RESULT                          |
+| MEDIA    |PATH    |                           RESULT                          |
 |----------|-----------|---------------------------------------------------------|
 |    All     |  `v1/media` |          returns all available data in DB                  |
 |   Movies   | `v1/movies` |          returns an array of objects, containing stored movie ID's         |
@@ -15,7 +15,7 @@ base-URL: http://requests-api.tomd.io
 
 ## POST method
 
-| MEDIA TYPE |     PATH    |                           RESULT                          |
+| MEDIA    |PATH       |RESULT                                                     |
 |----------|-----------|---------------------------------------------------------|
 |   Movies   | `v1/movies/:id` |          pushes the requested movies ID into Movie DB        |
 |     TV     |    `v1/tv/:id`   |         pushes the requested TV show ID into the TV DB        |
