@@ -5,7 +5,7 @@ A restful Nodejs api to store requested movies from the [Plex Requests Client](h
 
 ##GET Method:
 
-
+base-URL: http://requests-api.tomd.io
 
 | MEDIA TYPE |     PATH    |                           RESULT                          |
 |:----------:|:-----------:|:---------------------------------------------------------:|
@@ -16,7 +16,7 @@ A restful Nodejs api to store requested movies from the [Plex Requests Client](h
 
 ##POST method:
 
-
+base-URL: http://requests-api.tomd.io
 
 | MEDIA TYPE |     PATH    |                           RESULT                          |
 |:----------:|:-----------:|:---------------------------------------------------------:|
