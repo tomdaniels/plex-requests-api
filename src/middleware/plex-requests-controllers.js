@@ -4,8 +4,16 @@ exports.getAll = function(req, res) {
   res.send('list all movie ID\'s');
 }
 
-exports.listMovieId = function(req, res) {
-  res.send('get list of movie ID\'s from database (somewhere)');
+exports.listMovieId = function(req, res, next) {
+  database.ref('movies').once('value').then((snapshot) => {
+    const movies = [];
+    snapshot.forEach((childSnapshot) => {
+      movies.push({
+        id: childSnapshot.val(),
+      });
+      res.send(movies);
+    });
+  }).catch((error) => console.log(error));
 }
 
 exports.addMovieId = function(req, res) {
@@ -16,7 +24,15 @@ exports.addMovieId = function(req, res) {
 }
 
 exports.listTvId = function(req, res) {
-  res.send('get list of TV ID\'s from database (somewhere)');
+  database.ref('tv').once('value').then((snapshot) => {
+    const movies = [];
+    snapshot.forEach((childSnapshot) => {
+      movies.push({
+        id: childSnapshot.val(),
+      });
+      res.send(movies);
+    });
+  }).catch((error) => console.log(error));
 }
 
 exports.addTvId = function(req, res) {
@@ -27,7 +43,15 @@ exports.addTvId = function(req, res) {
 }
 
 exports.listTvSeasonId = function(req, res) {
-  res.send('get list of TV/SEASON ID\'s from database (somewhere)');
+  database.ref('tv/seasons').once('value').then((snapshot) => {
+    const movies = [];
+    snapshot.forEach((childSnapshot) => {
+      movies.push({
+        id: childSnapshot.val(),
+      });
+      res.send(movies);
+    });
+  }).catch((error) => console.log(error));
 }
 
 exports.addTvSeasonId = function(req, res) {

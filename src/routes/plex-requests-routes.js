@@ -11,18 +11,23 @@ module.exports = function(app) {
   });
 
   app.route(`${prefix}/media`)
-    .get(requestControllers.getAll)
+    .get(requestControllers.getAll);
+
+  app.route(`${prefix}/movies`)
+    .get(requestControllers.listMovieId);
 
   app.route(`${prefix}/movie/:id`)
-    .get(requestControllers.listMovieId)
     .post(requestControllers.addMovieId);
 
+  app.route(`${prefix}/tv`)
+    .get(requestControllers.listTvId);
 
   app.route(`${prefix}/tv/:id`)
-    .get(requestControllers.listTvId)
     .post(requestControllers.addTvId);
 
+  app.route(`${prefix}/seasons`)
+    .get(requestControllers.listTvSeasonId);
+
   app.route(`${prefix}/tv/:id/season/:seasonId`)
-    .get(requestControllers.listTvSeasonId)
     .post(requestControllers.addTvSeasonId);
 };
