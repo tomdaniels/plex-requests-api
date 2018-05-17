@@ -2,20 +2,24 @@ const database = require('../firebase/firebase');
 
 function getMedia(apiData, response) {
   const media = [];
-  const data = apiData;
-  media.push(data);
+  apiData.forEach((child) => {
+    media.push(child.val());
+  });
   response.send(media);
 };
 
 exports.getAll = function(req, res) {
   database.ref('/').once('value').then((snapshot) => {
-    getMedia(snapshot.val(), res);
+    const media = [];
+    const data = snapshot.val();
+    media.push(data);
+    res.send(data);
   }).catch((error) => console.log(error));
 };
 
 exports.listMovies = function(req, res, next) {
   database.ref('movies').once('value').then((snapshot) => {
-    getMedia(snapshot.val(), res);
+    getMedia(snapshot, res);
   }).catch((error) => console.log(error));
 };
 
@@ -27,21 +31,19 @@ exports.addMovieId = function(req, res) {
 
 exports.listTvShows = function(req, res) {
   database.ref('tv').once('value').then((snapshot) => {
-    getMedia(snapshot.val(), res);
+    getMedia(snapshot, res);
   }).catch((error) => console.log(error));
 };
 
 exports.addTvId = function(req, res) {
   const message = `the show that has been requested: ${req.params.id}`;
-  database.ref('tv').push({
-    tvId: req.params.id,
-  });
+  database.ref('tv').push(req.params.id);
   res.send(message);
 };
 
 exports.listTvSeasons = function(req, res) {
   database.ref('seasons').once('value').then((snapshot) => {
-    getMedia(snapshot.val(), res);
+    getMedia(snapshot, res);
   }).catch((error) => console.log(error));
 };
 
