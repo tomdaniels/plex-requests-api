@@ -25,7 +25,7 @@ base-URL: http://requests-api.tomd.io
 
 | MEDIA    |ENDPOINT    |                           RESULT                          |
 |----------|-----------|---------------------------------------------------------|
-|    All     |  `v1/media-resolved` |          removes all available data in DB                  |
-|   Movies   | `v1/movies-resolved` |          removes all children of the movie DB         |
+|    All     |  `v1/media-resolved` |          clears all available data in DB                  |
+|   Movies   | `v1/movies-resolved` |          clears all children of the movie DB         |
 |     TV     |    `v1/tv-resolved`   |         removes all children of the TV show DB        |
-|   Seasons  | `v1/seasons-resolved` | removes all children of the Seasons DB |
+|   Seasons  | `v1/seasons-resolved` | clears all children of the Seasons DB |
