@@ -6,7 +6,7 @@ base-URL: http://requests-api.tomd.io
 
 ## GET method
 
-| MEDIA    |PATH    |                           RESULT                          |
+| MEDIA    |ENDPOINT    |                           RESULT                          |
 |----------|-----------|---------------------------------------------------------|
 |    All     |  `v1/media` |          returns a nested object structure of all available data in DB                  |
 |   Movies   | `v1/movies` |          returns an array movie ID's         |
@@ -15,7 +15,7 @@ base-URL: http://requests-api.tomd.io
 
 ## POST method
 
-| MEDIA    |PATH       |RESULT                                                     |
+| MEDIA    |ENDPOINT       |RESULT                                                     |
 |----------|-----------|---------------------------------------------------------|
 |   Movies   | `v1/movies/:id` |          pushes the requested movies ID into Movie DB        |
 |     TV     |    `v1/tv/:id`   |         pushes the requested TV show ID into the TV DB        |
@@ -23,7 +23,7 @@ base-URL: http://requests-api.tomd.io
 
 ## Delete method
 
-| MEDIA    |PATH    |                           RESULT                          |
+| MEDIA    |ENDPOINT    |                           RESULT                          |
 |----------|-----------|---------------------------------------------------------|
 |    All     |  `v1/media-resolved` |          removes all available data in DB                  |
 |   Movies   | `v1/movies-resolved` |          removes all children of the movie DB         |
