@@ -4,7 +4,9 @@ A RESTful Nodejs api to store requested movies from the [Plex Requests Client](h
 
 base-URL: http://requests-api.tomd.io
 
-## GET method
+# Verbs
+
+### GET
 
 | MEDIA    |ENDPOINT    |                           RESULT                          |
 |----------|-----------|---------------------------------------------------------|
@@ -13,7 +15,7 @@ base-URL: http://requests-api.tomd.io
 |     TV     |    `v1/tv`   |         returns an array of TV show ID's        |
 |   Seasons  | `v1/seasons` | returns an array of objects, with ID's for individual seasons and the TV show they belong to. |
 
-## POST method
+### POST
 
 | MEDIA    |ENDPOINT       |RESULT                                                     |
 |----------|-----------|---------------------------------------------------------|
@@ -21,7 +23,7 @@ base-URL: http://requests-api.tomd.io
 |     TV     |    `v1/tv/:id`   |         pushes the requested TV show ID into the TV DB        |
 |   Seasons  | `v1/tv/:id/season/:seasonId` | pushes the individual season ID that was requested, with the show it belongs to into the TV DB |
 
-## Delete method
+### DELETE
 
 | MEDIA    |ENDPOINT    |                           RESULT                          |
 |----------|-----------|---------------------------------------------------------|
