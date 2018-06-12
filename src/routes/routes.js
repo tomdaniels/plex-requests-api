@@ -16,17 +16,17 @@ module.exports = function(app) {
   app.route(`${prefix}/movies`)
     .get(requestControllers.listMovies);
 
-  app.route(`${prefix}/movie/:id`)
-    .post(requestControllers.addMovieId);
-
   app.route(`${prefix}/tv`)
     .get(requestControllers.listTvShows);
 
-  app.route(`${prefix}/tv/:id`)
-    .post(requestControllers.addTvId);
-
   app.route(`${prefix}/seasons`)
     .get(requestControllers.listTvSeasons);
+
+  app.route(`${prefix}/movie/:id`)
+    .post(requestControllers.addMovieId);
+
+  app.route(`${prefix}/tv/:id`)
+    .post(requestControllers.addTvId);
 
   app.route(`${prefix}/tv/:id/season/:seasonId`)
     .post(requestControllers.addTvSeasonId);
