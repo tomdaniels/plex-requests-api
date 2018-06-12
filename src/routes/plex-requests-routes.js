@@ -1,5 +1,5 @@
 module.exports = function(app) {
-  var requestControllers = require(`../middleware/plex-requests-controllers`);
+  var requestControllers = require(`../middleware/middleware`);
   const prefix = '/v1';
 
   app.use(function(req, res, next) {
