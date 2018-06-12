@@ -1,5 +1,7 @@
+const getAll = require('../middleware/all-media');
+
 module.exports = function(app) {
-  var requestControllers = require(`../controllers/plex-requests-controllers`);
+  var requestControllers = require(`../middleware/plex-requests-controllers`);
   const prefix = '/v1';
 
   app.use(function(req, res, next) {
@@ -11,7 +13,7 @@ module.exports = function(app) {
   });
 
   app.route(`${prefix}/media`)
-    .get(requestControllers.getAll);
+    .get(getAll);
 
   app.route(`${prefix}/movies`)
     .get(requestControllers.listMovies);

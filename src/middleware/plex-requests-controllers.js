@@ -8,15 +8,6 @@ function getMedia(apiData, response) {
   response.send(media);
 };
 
-exports.getAll = function(req, res) {
-  database.ref('/').once('value').then((snapshot) => {
-    const media = [];
-    const data = snapshot.val();
-    media.push(data);
-    res.send(data);
-  }).catch((error) => console.log(error));
-};
-
 exports.listMovies = function(req, res, next) {
   database.ref('movies').once('value').then((snapshot) => {
     getMedia(snapshot, res);
