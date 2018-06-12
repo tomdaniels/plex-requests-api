@@ -17,7 +17,7 @@ exports.getAll = function(req, res) {
   }).catch((error) => console.log(error));
 };
 
-exports.listMovies = function(req, res, next) {
+exports.listMovies = function(req, res) {
   database.ref('movies').once('value').then((snapshot) => {
     getMedia(snapshot, res);
   }).catch((error) => console.log(error));

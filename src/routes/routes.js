@@ -1,10 +1,10 @@
 module.exports = function(app) {
-  var requestControllers = require(`../controllers/plex-requests-controllers`);
+  var requestControllers = require(`../middleware/middleware`);
   const prefix = '/v1';
 
   app.use(function(req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', 'http://requests.tomd.io');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
 
     next();
@@ -16,17 +16,17 @@ module.exports = function(app) {
   app.route(`${prefix}/movies`)
     .get(requestControllers.listMovies);
 
-  app.route(`${prefix}/movie/:id`)
-    .post(requestControllers.addMovieId);
-
   app.route(`${prefix}/tv`)
     .get(requestControllers.listTvShows);
 
-  app.route(`${prefix}/tv/:id`)
-    .post(requestControllers.addTvId);
-
   app.route(`${prefix}/seasons`)
     .get(requestControllers.listTvSeasons);
+
+  app.route(`${prefix}/movie/:id`)
+    .post(requestControllers.addMovieId);
+
+  app.route(`${prefix}/tv/:id`)
+    .post(requestControllers.addTvId);
 
   app.route(`${prefix}/tv/:id/season/:seasonId`)
     .post(requestControllers.addTvSeasonId);
