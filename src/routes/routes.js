@@ -3,7 +3,7 @@ module.exports = function(app) {
   const prefix = '/v1';
 
   app.use(function(req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', 'http://requests.tomd.io', 'http://localhost:8080');
+    // res.setHeader('Access-Control-Allow-Origin', 'http://requests.tomd.io', 'http://localhost:8080');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
 
