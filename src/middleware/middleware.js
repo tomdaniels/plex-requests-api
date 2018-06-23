@@ -24,8 +24,8 @@ exports.listMovies = function(req, res) {
 };
 
 exports.addMovieId = function(req, res) {
-  const message = `the movie that has been requested: ${req.params.id}`;
-  database.ref('movies').push(req.params.id);
+  const message = `the movie that has been requested: ${req.params.name}`;
+  database.ref('movies').push(req.params.name);
   res.send(message);
 };
 
@@ -36,8 +36,8 @@ exports.listTvShows = function(req, res) {
 };
 
 exports.addTvId = function(req, res) {
-  const message = `the show that has been requested: ${req.params.id}`;
-  database.ref('tv').push(req.params.id);
+  const message = `the show that has been requested: ${req.params.name}`;
+  database.ref('tv').push(req.params.name);
   res.send(message);
 };
 
@@ -48,10 +48,10 @@ exports.listTvSeasons = function(req, res) {
 };
 
 exports.addTvSeasonId = function(req, res) {
-  const message = `the show ID that has been requested: ${req.params.id} (SeasonID): ${req.params.seasonId}`;
+  const message = `the show that has been requested: ${req.params.showName} (${req.params.seasonNumber})`;
   database.ref('seasons').push({
-    show: req.params.id,
-    season: req.params.seasonId,
+    show: req.params.showName,
+    season: req.params.seasonNumber,
   });
   res.send(message);
 };
