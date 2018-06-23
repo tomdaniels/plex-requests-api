@@ -22,13 +22,13 @@ module.exports = function(app) {
   app.route(`${prefix}/seasons`)
     .get(requestControllers.listTvSeasons);
 
-  app.route(`${prefix}/movie/:id`)
+  app.route(`${prefix}/movie/:name`)
     .post(requestControllers.addMovieId);
 
-  app.route(`${prefix}/tv/:id`)
+  app.route(`${prefix}/tv/:name`)
     .post(requestControllers.addTvId);
 
-  app.route(`${prefix}/tv/:id/season/:seasonId`)
+  app.route(`${prefix}/tv/:showName/season/:seasonNumber`)
     .post(requestControllers.addTvSeasonId);
 
   app.route(`${prefix}/media-resolved`)
