@@ -13,7 +13,8 @@ exports.getAll = function(req, res) {
     const media = [];
     const data = snapshot.val();
     media.push(data);
-    res.send(data);
+
+    res.send(media);
   }).catch((error) => console.log(error));
 };
 
