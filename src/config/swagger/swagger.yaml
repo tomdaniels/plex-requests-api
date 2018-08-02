@@ -1,0 +1,67 @@
+swagger: '2.0'
+info:
+  title: Plex Requests API
+  description: Plex Requests API
+  version: '1.0.0'
+basePath: /v1
+schemes:
+  - https
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /media:
+    get:
+      operationId: media
+      description: Retrieve all requested media from database
+      responses:
+        200:
+          description: data for a specific user
+          schema:
+            $ref: '#/definitions/Media'
+        400:
+          description: Bad Request.
+          schema:
+            $ref: '#/definitions/ApiError'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/ApiError'
+
+  /swagger:
+    x-swagger-pipe: swagger_raw
+definitions:
+
+  Media:
+    type: object
+    properties:
+      movies:
+        type: object
+        properties:
+          movieTitle:
+            type: string
+      tv:
+        type: object
+        properties:
+          showTitle:
+            type: string
+      seasons:
+        type: object
+        properties:
+          season:
+            type: string
+          show:
+            type: string
+
+  ApiError:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      fields:
+        type: string
