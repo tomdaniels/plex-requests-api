@@ -4,6 +4,7 @@
   "description": "api to handle requests for plex requests client",
   "main": "server.js",
   "scripts": {
+    "start": "node ./src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "nodemon ./src/server.js"
   },
