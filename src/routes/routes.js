@@ -10,6 +10,8 @@ module.exports = function(app) {
     next();
   });
 
+  app.get('/', (req, res) => res.redirect('/swagger'));
+
   app.route(`${prefix}/media`)
     .get(requestControllers.getAll);
 
