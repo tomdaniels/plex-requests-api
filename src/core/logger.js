@@ -24,7 +24,7 @@ function createLogger(name) {
   return logger;
 }
 
-function getLogger(name = 'transactions-users') {
+function getLogger(name = 'plex-requests-api') {
   if (!loggers.has(name)) {
     loggers.set(name, createLogger(name));
   }
