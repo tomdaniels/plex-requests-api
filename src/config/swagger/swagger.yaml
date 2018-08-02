@@ -29,6 +29,23 @@ paths:
           description: Unexpected error
           schema:
             $ref: '#/definitions/ApiError'
+    delete:
+      operationId: meadia
+      description: Delete all media stored in DB
+      responses:
+        200:
+          description: data for a specific user
+          schema:
+            $ref: '#/definitions/Media'
+        400:
+          description: Bad Request.
+          schema:
+            $ref: '#/definitions/ApiError'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/ApiError'
+
 
   /swagger:
     x-swagger-pipe: swagger_raw
