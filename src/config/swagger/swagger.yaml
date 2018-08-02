@@ -1,0 +1,64 @@
+swagger: '2.0'
+info:
+  title: Transactions Users API
+  description: Transactions Users API
+  version: '1.0.0'
+basePath: /v1
+schemes:
+  - https
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /users/{userId}:
+    x-swagger-router-controller: users
+    get:
+      operationId: users
+      description: Retrieve data for a specific user & vertical
+      parameters:
+        - name: userId
+          in: path
+          description: The ID of the user
+          required: true
+          type: integer
+          format: int32
+          minimum: 1
+      responses:
+        200:
+          description: data for a specific user
+          schema:
+            $ref: '#/definitions/UserData'
+        400:
+          description: Bad Request.
+          schema:
+            $ref: '#/definitions/ApiError'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/ApiError'
+
+  /swagger:
+    x-swagger-pipe: swagger_raw
+definitions:
+
+  UserData:
+    type: object
+    required:
+      - userId
+    properties:
+      userId:
+        type: integer
+        format: int32
+
+  ApiError:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      fields:
+        type: string
