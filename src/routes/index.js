@@ -1,9 +1,14 @@
-var requestControllers = require(`../middleware/middleware`);
+// var requestControllers = require(`../middleware/middleware`);
 const { Router } = require('express');
 const runHealthChecks = require('../core/run-health-checks');
 const noCache = require('../middleware/no-cache');
 const apiV1 = require('./versions/1');
 const prefix = '/v1';
+
+const mediaController = require('../controllers/media');
+const moviesController = require('../controllers/movies');
+const tvController = require('../controllers/tv');
+const seasonsController = require('../controllers/seasons');
 
 const metaRouter = new Router({
   strict: true,
@@ -18,37 +23,29 @@ metaRouter.use('/v1', apiV1);
 
 // core routes
 metaRouter.route(`${prefix}/media`)
-  .get(requestControllers.getAll);
+  .get(mediaController.getAll)
+  .delete(mediaController.clearAllMedia);
 
 metaRouter.route(`${prefix}/movies`)
-  .get(requestControllers.listMovies);
-
-metaRouter.route(`${prefix}/tv`)
-  .get(requestControllers.listTvShows);
-
-metaRouter.route(`${prefix}/seasons`)
-  .get(requestControllers.listTvSeasons);
+  .get(moviesController.listMovies)
+  .delete(moviesController.clearMovies);
 
 metaRouter.route(`${prefix}/movie/:name`)
-  .post(requestControllers.addMovieId);
+  .post(moviesController.addMovieId);
+
+metaRouter.route(`${prefix}/tv`)
+  .get(tvController.listTvShows)
+  .delete(tvController.clearTv);
 
 metaRouter.route(`${prefix}/tv/:name`)
-  .post(requestControllers.addTvId);
+  .post(tvController.addTvId);
+
+metaRouter.route(`${prefix}/seasons`)
+  .get(seasonsController.listTvSeasons)
+  .delete(seasonsController.clearSeasons);
 
 metaRouter.route(`${prefix}/tv/:showName/season/:seasonNumber`)
-  .post(requestControllers.addTvSeasonId);
-
-metaRouter.route(`${prefix}/media-resolved`)
-  .delete(requestControllers.clearAllMedia);
-
-metaRouter.route(`${prefix}/movies-resolved`)
-  .delete(requestControllers.clearMovies);
-
-metaRouter.route(`${prefix}/tv-resolved`)
-  .delete(requestControllers.clearTv);
-
-metaRouter.route(`${prefix}/seasons-resolved`)
-  .delete(requestControllers.clearSeasons);
+  .post(seasonsController.addTvSeasonId);
 
 metaRouter.get('/ping', noCache, (req, res) => res.send());
 metaRouter.get('/health', noCache, (req, res, next) => {
