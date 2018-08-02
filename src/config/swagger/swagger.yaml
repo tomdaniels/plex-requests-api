@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
-  title: Transactions Users API
-  description: Transactions Users API
+  title: Plex Requests API
+  description: Plex Requests API
   version: '1.0.0'
 basePath: /v1
 schemes:
@@ -12,24 +12,15 @@ consumes:
 produces:
   - application/json
 paths:
-  /users/{userId}:
-    x-swagger-router-controller: users
+  /media:
     get:
-      operationId: users
-      description: Retrieve data for a specific user & vertical
-      parameters:
-        - name: userId
-          in: path
-          description: The ID of the user
-          required: true
-          type: integer
-          format: int32
-          minimum: 1
+      operationId: media
+      description: Retrieve all requested media from database
       responses:
         200:
           description: data for a specific user
           schema:
-            $ref: '#/definitions/UserData'
+            $ref: '#/definitions/Media'
         400:
           description: Bad Request.
           schema:
@@ -43,14 +34,26 @@ paths:
     x-swagger-pipe: swagger_raw
 definitions:
 
-  UserData:
+  Media:
     type: object
-    required:
-      - userId
     properties:
-      userId:
-        type: integer
-        format: int32
+      movies:
+        type: object
+        properties:
+          movieTitle:
+            type: string
+      tv:
+        type: object
+        properties:
+          showTitle:
+            type: string
+      seasons:
+        type: object
+        properties:
+          season:
+            type: string
+          show:
+            type: string
 
   ApiError:
     type: object
