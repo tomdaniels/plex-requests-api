@@ -23,7 +23,6 @@ metaRouter.use(function(req, res, next) {
     next();
   });
 
-
 // any custom health checks
 const healthChecks = () => [];
 
