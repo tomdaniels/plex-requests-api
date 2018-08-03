@@ -29,7 +29,7 @@ paths:
           schema:
             $ref: '#/definitions/ApiError'
     delete:
-      operationId: meadia
+      operationId: media
       description: Delete all media stored in DB
       responses:
         200:
