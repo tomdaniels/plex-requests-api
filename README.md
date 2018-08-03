@@ -19,7 +19,7 @@ base-URL: http://requests-api.tomd.io
 
 | MEDIA    |ENDPOINT       |RESULT                                                     |
 |----------|-----------|---------------------------------------------------------|
-|   Movies   | `v1/movies/:id` |          pushes the requested movies ID into Movie DB        |
+|   Movies   | `v1/movie/:id` |          pushes the requested movies ID into Movie DB        |
 |     TV     |    `v1/tv/:id`   |         pushes the requested TV show ID into the TV DB        |
 |   Seasons  | `v1/tv/:id/season/:seasonId` | pushes the individual season ID that was requested, with the show it belongs to into the TV DB |
 
