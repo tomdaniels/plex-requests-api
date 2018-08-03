@@ -2,9 +2,14 @@
 
 A RESTful Nodejs api to store requested movies from the [Plex Requests Client](http://requests.tomd.io) website. ([view code](https://github.com/tomdaniels/plex-requests-client))
 
+More documentation available on [swagger](http://requests-api.tomd.io/swagger)
+
 base-URL: http://requests-api.tomd.io
 
-# Verbs
+[Swagger](ttp://requests-api.tomd.io/swagger)
+
+
+## Verbs
 
 ### GET
 
