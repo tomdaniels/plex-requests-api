@@ -45,11 +45,81 @@ paths:
           description: Unexpected error
           schema:
             $ref: '#/definitions/ApiError'
+  /movies:
+    get:
+      operationId: media
+      description: Retrieve all requested movies from database
+      responses:
+        200:
+          description: data for a specific user
+          schema:
+            $ref: '#/definitions/Movies'
+        400:
+          description: Bad Request.
+          schema:
+            $ref: '#/definitions/ApiError'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/ApiError'
+    delete:
+      operationId: media
+      description: Delete all movies stored in movie DB
+      responses:
+        200:
+          description: Confirmation message on movies database being cleared
+          schema:
+            type: string
+            example: All media on the database has been removed
+        400:
+          description: Bad Request.
+          schema:
+            $ref: '#/definitions/ApiError'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/ApiError'
+  /movie/{movie-name}:
+    x-swagger-router-controller: movies
+    post:
+      operationId: movies
+      description: Add a movie title to database
+      parameters:
+        - name: movie-name
+          in: path
+          description: The name of the movie to add
+          required: true
+          type: string
+          minimum: 1
+      responses:
+        200:
+          description: Confirmation message
+          schema:
+            type: string
+            example: the movie that has been requested {movie-name}
+        400:
+          description: Bad Request.
+          schema:
+            $ref: '#/definitions/ApiError'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/ApiError'
 
 
   /swagger:
     x-swagger-pipe: swagger_raw
 definitions:
+
+  Movies:
+    type: object
+    properties:
+      movies:
+        type: object
+        properties:
+          uniqueId:
+            type: string
+            example: the-simpsons-movie
 
   Media:
     type: object
@@ -57,20 +127,24 @@ definitions:
       movies:
         type: object
         properties:
-          movieTitle:
+          uniqueId:
             type: string
+            example: the-simpsons-movie
       tv:
         type: object
         properties:
-          showTitle:
+          uniqueId:
             type: string
+            example: the-simpsons
       seasons:
         type: object
         properties:
           season:
             type: string
+            example: season-3
           show:
             type: string
+            example: family-guy
 
   ApiError:
     type: object
