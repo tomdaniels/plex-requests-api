@@ -1,5 +1,4 @@
 const database = require('../firebase/firebase');
-const getMedia = require('../middleware/get-media');
 
 exports.getAll = function(req, res) {
   database.ref('/').once('value').then((snapshot) => {
