@@ -45,40 +45,6 @@ paths:
           description: Unexpected error
           schema:
             $ref: '#/definitions/ApiError'
-  /movies:
-    get:
-      operationId: media
-      description: Retrieve all requested movies from database
-      responses:
-        200:
-          description: data for a specific user
-          schema:
-            $ref: '#/definitions/Movies'
-        400:
-          description: Bad Request.
-          schema:
-            $ref: '#/definitions/ApiError'
-        default:
-          description: Unexpected error
-          schema:
-            $ref: '#/definitions/ApiError'
-    delete:
-      operationId: media
-      description: Delete all movies stored in movie DB
-      responses:
-        200:
-          description: Confirmation message on movies database being cleared
-          schema:
-            type: string
-            example: All media on the database has been removed
-        400:
-          description: Bad Request.
-          schema:
-            $ref: '#/definitions/ApiError'
-        default:
-          description: Unexpected error
-          schema:
-            $ref: '#/definitions/ApiError'
   /movie/{movie-name}:
     x-swagger-router-controller: movies
     post:
