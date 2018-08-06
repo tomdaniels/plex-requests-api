@@ -1,4 +1,3 @@
-// var requestControllers = require(`../middleware/middleware`);
 const { Router } = require('express');
 const runHealthChecks = require('../core/run-health-checks');
 const noCache = require('../middleware/no-cache');
