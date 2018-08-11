@@ -165,6 +165,40 @@ paths:
           description: Unexpected error
           schema:
             $ref: '#/definitions/ApiError'
+  /seasons:
+    get:
+      operationId: seasons
+      description: A list of all shows that have had requests only for specific seasons
+      responses:
+        200:
+          description: A list of shows that have had requests only for specific seasons
+          schema:
+            $ref: '#/definitions/Seasons'
+        400:
+          description: Bad Request.
+          schema:
+            $ref: '#/definitions/ApiError'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/ApiError'
+    delete:
+      operationId: seasons
+      description: Delete all requested seasons
+      responses:
+        200:
+          description: Confirmation message on database being cleared
+          schema:
+            type: string
+            example: All seasons on the database has been removed
+        400:
+          description: Bad Request.
+          schema:
+            $ref: '#/definitions/ApiError'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/ApiError'
   /tv/{show-name}/season/{season-number}:
     x-swagger-router-controller: seasons
     post:
