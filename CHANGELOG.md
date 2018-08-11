@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased][]
 ### Added
 - /movies swagger definition
+- /tv swagger definition
 
 ## [0.1.1][] - 2018-08-11
 ### Changed
