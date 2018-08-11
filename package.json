@@ -1,11 +1,12 @@
 {
   "name": "plex-requests-api",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "api to handle requests for plex requests client",
   "main": "server.js",
   "scripts": {
     "start": "node ./src/server.js",
     "test": "jest",
+    "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md",
     "watch": "nodemon ./src/server.js"
   },
   "author": "Tom Daniels",
@@ -30,6 +31,8 @@
     "swagger-tools": "^0.10.4"
   },
   "devDependencies": {
-    "jest": "22.4.1"
+    "changelog-verify": "^1.1.0",
+    "jest": "22.4.1",
+    "version-changelog": "^3.1.0"
   }
 }
