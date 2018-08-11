@@ -71,6 +71,64 @@ paths:
           description: Unexpected error
           schema:
             $ref: '#/definitions/ApiError'
+  /tv/{show-name}:
+    x-swagger-router-controller: tv
+    post:
+      operationId: tv
+      description: Add a show title to database
+      parameters:
+        - name: show-name
+          in: path
+          description: The name of the show to add
+          required: true
+          type: string
+          minimum: 1
+      responses:
+        200:
+          description: Confirmation message
+          schema:
+            type: string
+            example: the show that has been requested {show-name}
+        400:
+          description: Bad Request.
+          schema:
+            $ref: '#/definitions/ApiError'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/ApiError'
+  /tv/{show-name}/season/{season-number}:
+    x-swagger-router-controller: seasons
+    post:
+      operationId: seasons
+      description: Add a specific season for a show to database
+      parameters:
+        - name: show-name
+          in: path
+          description: The name of the show to add
+          required: true
+          type: string
+          minimum: 1
+        - name: season-number
+          in: path
+          description: The season number and show name to add
+          required: true
+          type: string
+          minimum: 1
+      responses:
+        200:
+          description: Confirmation message
+          schema:
+            type: string
+            example: the show that has been requested {show-name} ({season-number})
+        400:
+          description: Bad Request.
+          schema:
+            $ref: '#/definitions/ApiError'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/ApiError'
 
 
   /swagger:
@@ -86,6 +144,29 @@ definitions:
           uniqueId:
             type: string
             example: the-simpsons-movie
+
+  TV:
+    type: object
+    properties:
+      tv:
+        type: object
+        properties:
+          uniqueId:
+            type: string
+            example: the-simpsons
+
+  Seasons:
+    type: object
+    properties:
+      seasons:
+        type: object
+        properties:
+          season:
+            type: string
+            example: season-3
+          show:
+            type: string
+            example: family-guy
 
   Media:
     type: object
