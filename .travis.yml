@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - v10
+  - v8
+  - "node"
+
+before_install:
+  - npm i -g yarn
