@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][]
 ### Added
+- td global lint rules added
 - Travis CI setup
 - Jest testing suite
 
