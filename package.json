@@ -8,11 +8,12 @@
     "test": "jest",
     "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md",
     "watch": "nodemon ./src/server.js",
-    "lint": "./node_modules/.bin/eslint *.js"
+    "lint": "./node_modules/.bin/eslint './src/**/*.js'"
   },
   "author": "Tom Daniels",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "compression": "^1.7.3",
     "config": "^2.0.1",
     "cookie-parser": "^1.4.3",
