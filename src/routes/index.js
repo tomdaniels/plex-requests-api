@@ -14,7 +14,7 @@ const metaRouter = new Router({
   caseSensitive: true,
 });
 
-metaRouter.use(function(req, res, next) {
+metaRouter.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
@@ -39,6 +39,10 @@ metaRouter.route(`${prefix}/movies`)
 
 metaRouter.route(`${prefix}/movie/:name`)
   .post(moviesController.addMovieId);
+
+// TEST
+metaRouter.route(`${prefix}/movie/`)
+  .post(moviesController.newThing);
 
 metaRouter.route(`${prefix}/tv`)
   .get(tvController.listTvShows)

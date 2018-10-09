@@ -13,6 +13,10 @@ exports.addMovieId = function(req, res) {
   res.send(message);
 };
 
+exports.newThing = function(req, res) {
+  res.send(req.body);
+}
+
 exports.clearMovies = function(req, res) {
   database.ref('movies').remove().then((response) => {
     res.send('Movies database has been cleared!');
