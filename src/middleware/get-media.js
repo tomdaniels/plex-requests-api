@@ -1,7 +1,7 @@
 function getMedia(apiData, response) {
-  let media;
+  const media = [];
   apiData.forEach((child) => {
-    media = child;
+    media.push(child.val());
   });
   response.send(media);
 }
