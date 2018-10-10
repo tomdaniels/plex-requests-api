@@ -19,7 +19,7 @@ module.exports = function runHealthChecks(healthChecks) {
     Timestamp: Date.now(),
   };
 
-  return Promise.all(healthChecks()).then((results) =>
+  return Promise.all(healthChecks()).then(results =>
     results.reduce(resultReducer, initialResponse),
   );
 };

@@ -11,7 +11,6 @@ const pinoExpress = require('express-pino-logger');
 const createLogger = require('./core/logger');
 const serverTiming = require('./middleware/server-timing');
 const errorHandler = require('./middleware/error-handler');
-// const exampleValidator = require('./middleware/example-validator');
 const configureSwaggerWithMetrics = require('./middleware/swagger-with-metrics');
 const { metaRouter } = require('./routes/');
 const { name, version } = require('../package.json');
@@ -60,7 +59,7 @@ async function start() {
 
   app.use(
     cors({
-      origin: "*",
+      origin: '*',
     }),
   );
 

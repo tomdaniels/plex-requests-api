@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][]
+### Changed
+Test accepting a movie object over just string.
+
 ### Added
 - td global lint rules added
 - Travis CI setup
