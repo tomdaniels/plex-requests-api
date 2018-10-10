@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][]
+
+## [1.4.0][] - 2018-10-10
 ### Changed
 Test accepting a movie object over just string.
 
@@ -25,6 +27,7 @@ Test accepting a movie object over just string.
 - Updated swagger to include all post route definitions
 
 
-[Unreleased]: https://github.com/tomdaniels/plex-requests-api/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/tomdaniels/plex-requests-api/compare/v1.4.0...HEAD
+[1.4.0]: https://github.com/tomdaniels/plex-requests-api/compare/v1.0.0...v1.4.0
 [1.0.0]: https://github.com/tomdaniels/plex-requests-api/compare/v0.1.1...v1.0.0
 [0.1.1]: https://github.com/tomdaniels/plex-requests-api/tree/v0.1.1
