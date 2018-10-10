@@ -3,7 +3,7 @@ const createLogger = require('./core/logger');
 const start = require('./app');
 
 start()
-  .then((app) => {
+  .then(app => {
     const logger = createLogger();
     const port = config.get('PORT');
 
@@ -12,4 +12,4 @@ start()
     });
   })
   // eslint-disable-next-line no-console
-  .catch((error) => console.log(`Server failed: ${error}`));
+  .catch(error => console.log(`Server failed: ${error}`));

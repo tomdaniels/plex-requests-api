@@ -7,7 +7,7 @@ const options = {
   useStubs: false,
 };
 
-const initializeMiddleware = (callback) => (middleware) => {
+const initializeMiddleware = callback => middleware => {
   callback([
     // Interpret Swagger resources and attach metadata to request - must be first in swagger-tools middleware chain
     middleware.swaggerMetadata(),
@@ -29,7 +29,7 @@ function configureSwaggerWithMetrics() {
   );
 
   // Initialize the Swagger middleware
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     swaggerTools.initializeMiddleware(
       swaggerSpec,
       initializeMiddleware(resolve),

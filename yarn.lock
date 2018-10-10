@@ -1332,9 +1332,9 @@ eslint-config-prettier@^2.9.0:
   dependencies:
     get-stdin "^5.0.1"
 
-eslint-config-td-eslint-config@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-td-eslint-config/-/eslint-config-td-eslint-config-1.0.0.tgz#31f8fba0fb8e781b05344d503b314d70901c92e6"
+eslint-config-td-eslint-config@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-td-eslint-config/-/eslint-config-td-eslint-config-1.1.0.tgz#a73ff26730ec3d82f329fd7ec8654e5ca5fa7133"
   dependencies:
     babel-eslint "^8.0.2"
     eslint-config-airbnb "^16.1.0"

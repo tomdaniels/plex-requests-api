@@ -5,11 +5,11 @@ exports.listTvSeasons = (req, res) => {
   database
     .ref('seasons')
     .once('value')
-    .then((snapshot) => {
+    .then(snapshot => {
       getMedia(snapshot, res);
     })
     // eslint-disable-next-line no-console
-    .catch((error) => console.log(error));
+    .catch(error => console.log(error));
 };
 
 exports.addTvSeasonId = (req, res) => {
@@ -30,7 +30,7 @@ exports.clearSeasons = (req, res) => {
     .then(() => {
       res.send('Seaasons database has been cleared!');
     })
-    .catch((error) => {
+    .catch(error => {
       res.send({
         error,
       });

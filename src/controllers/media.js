@@ -4,7 +4,7 @@ exports.getAll = (req, res) => {
   database
     .ref('/')
     .once('value')
-    .then((snapshot) => {
+    .then(snapshot => {
       const media = [];
       const data = snapshot.val();
       media.push(data);
@@ -12,7 +12,7 @@ exports.getAll = (req, res) => {
       res.send(media);
     })
     // eslint-disable-next-line no-console
-    .catch((error) => console.log(error));
+    .catch(error => console.log(error));
 };
 
 exports.clearAllMedia = (req, res) => {
@@ -22,7 +22,7 @@ exports.clearAllMedia = (req, res) => {
     .then(() => {
       res.send('All media on the database has been removed');
     })
-    .catch((error) => {
+    .catch(error => {
       res.send({
         error,
       });

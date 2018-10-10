@@ -5,11 +5,11 @@ exports.listTvShows = (req, res) => {
   database
     .ref('tv')
     .once('value')
-    .then((snapshot) => {
+    .then(snapshot => {
       getMedia(snapshot, res);
     })
     // eslint-disable-next-line no-console
-    .catch((error) => console.log(error));
+    .catch(error => console.log(error));
 };
 
 exports.addTvId = (req, res) => {
@@ -25,7 +25,7 @@ exports.clearTv = (req, res) => {
     .then(() => {
       res.send('the TV Shows database has been cleared!');
     })
-    .catch((error) => {
+    .catch(error => {
       res.send({
         error,
       });

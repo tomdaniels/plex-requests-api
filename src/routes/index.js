@@ -64,7 +64,7 @@ metaRouter
 metaRouter.get('/ping', noCache, (req, res) => res.send());
 metaRouter.get('/health', noCache, (req, res, next) => {
   runHealthChecks(healthChecks)
-    .then((results) => res.send(results))
+    .then(results => res.send(results))
     .catch(next);
 });
 

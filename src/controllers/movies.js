@@ -5,11 +5,11 @@ exports.listMovies = (req, res) => {
   database
     .ref('movies')
     .once('value')
-    .then((snapshot) => {
+    .then(snapshot => {
       getMedia(snapshot, res);
     })
     // eslint-disable-next-line no-console
-    .catch((error) => console.log(error));
+    .catch(error => console.log(error));
 };
 
 exports.addMovieId = (req, res) => {
@@ -25,7 +25,7 @@ exports.clearMovies = (req, res) => {
     .then(() => {
       res.send('Movies database has been cleared!');
     })
-    .catch((error) => {
+    .catch(error => {
       res.send({
         error,
       });
