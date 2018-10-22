@@ -1,6 +1,6 @@
 # plex-requests-api [![Build Status](https://travis-ci.com/tomdaniels/plex-requests-api.svg?branch=master)](https://travis-ci.com/tomdaniels/plex-requests-api)
 
-A RESTful Nodejs api to store requested movies from the [Plex Requests Client](http://requests.tomd.io) website. ([view code](https://github.com/tomdaniels/plex-requests-client))
+An api to store requested movies from the [Plex Requests Client](http://requests.tomd.io) website. ([view code](https://github.com/tomdaniels/plex-requests-client))
 
 More documentation available on [swagger](http://requests-api.tomd.io/swagger)
 
