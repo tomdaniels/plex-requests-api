@@ -1,11 +1,16 @@
-# Change Log
+# Changelog
 
-All notable changes to this project will be documented in this file.
+## [1.4.1](https://github.com/tomdaniels/plex-requests-api/compare/v1.4.0...v1.4.1) (2019-03-06)
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/)
-and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased][]
+### Bug Fixes
+
+* no publish to npm ([f598e2c](https://github.com/tomdaniels/plex-requests-api/commit/f598e2c))
+
+
+### Features
+
+* semantic-release req'd config :lock: ([befccce](https://github.com/tomdaniels/plex-requests-api/commit/befccce))
 
 ## [1.1.0][] - 2018-10-10
 ### Added
@@ -24,7 +29,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Updated swagger to include all post route definitions
 
 
-[Unreleased]: https://github.com/tomdaniels/plex-requests-api/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/tomdaniels/plex-requests-api/compare/v1.4.1...HEAD
+[1.4.1]: https://github.com/tomdaniels/plex-requests-api/compare/v1.1.0...v1.4.1
 [1.1.0]: https://github.com/tomdaniels/plex-requests-api/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/tomdaniels/plex-requests-api/compare/v0.1.1...v1.0.0
 [0.1.1]: https://github.com/tomdaniels/plex-requests-api/tree/v0.1.1
