@@ -6,7 +6,6 @@
   "scripts": {
     "start": "node ./src/server.js",
     "test": "jest",
-    "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md",
     "watch": "nodemon ./src/server.js",
     "lint": "./node_modules/.bin/eslint './src/**/*.js'",
     "release": "semantic-release"
