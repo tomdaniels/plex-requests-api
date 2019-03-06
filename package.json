@@ -8,7 +8,8 @@
     "test": "jest",
     "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md",
     "watch": "nodemon ./src/server.js",
-    "lint": "./node_modules/.bin/eslint './src/**/*.js'"
+    "lint": "./node_modules/.bin/eslint './src/**/*.js'",
+    "release": "semantic-release"
   },
   "author": "Tom Daniels",
   "license": "ISC",
@@ -33,11 +34,18 @@
     "swagger-tools": "^0.10.4"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^3.0.2",
+    "@semantic-release/commit-analyzer": "^6.1.0",
+    "@semantic-release/git": "^7.0.8",
+    "@semantic-release/github": "^5.2.10",
+    "@semantic-release/npm": "^5.1.4",
+    "@semantic-release/release-notes-generator": "^7.1.4",
     "changelog-verify": "^1.1.0",
     "eslint": "^5.5.0",
     "eslint-config-td-eslint-config": "^1.1.0",
     "jest": "22.4.1",
     "prettier": "^1.14.2",
+    "semantic-release": "^15.13.3",
     "version-changelog": "^3.1.0"
   },
   "eslintConfig": {
