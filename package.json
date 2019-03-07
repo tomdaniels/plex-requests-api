@@ -1,6 +1,6 @@
 {
   "name": "plex-requests-api",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "api to handle requests for plex requests client",
   "main": "server.js",
   "scripts": {

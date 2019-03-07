@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.4](https://github.com/tomdaniels/plex-requests-api/compare/v1.4.3...v1.4.4) (2019-03-07)
+
+
+### Bug Fixes
+
+* **Jenksfile:** kjfldshkjfhsd ([5599631](https://github.com/tomdaniels/plex-requests-api/commit/5599631))
+
 ## [1.4.3](https://github.com/tomdaniels/plex-requests-api/compare/v1.4.2...v1.4.3) (2019-03-07)
 
 
