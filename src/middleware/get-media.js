@@ -5,5 +5,4 @@ function getMedia(apiData, response) {
   });
   response.send(media);
 }
-
 module.exports = getMedia;
