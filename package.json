@@ -8,7 +8,7 @@
     "test": "jest",
     "watch": "nodemon ./src/server.js",
     "lint": "./node_modules/.bin/eslint './src/**/*.js'",
-    "release": "semantic-release"
+    "release": "semantic-release --no-ci"
   },
   "author": "Tom Daniels",
   "license": "ISC",
