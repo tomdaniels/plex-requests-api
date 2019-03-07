@@ -22,7 +22,6 @@ metaRouter.use((req, res, next) => {
     'Access-Control-Allow-Headers',
     'X-Requested-With,content-type',
   );
-
   next();
 });
 
