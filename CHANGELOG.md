@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.4.3](https://github.com/tomdaniels/plex-requests-api/compare/v1.4.2...v1.4.3) (2019-03-07)
+
+
+### Bug Fixes
+
+* **middleware:** cache: ([0679420](https://github.com/tomdaniels/plex-requests-api/commit/0679420))
+* **routes:** something else ([9bdaa85](https://github.com/tomdaniels/plex-requests-api/commit/9bdaa85))
+
+
+### Features
+
+* **middleware:** something ([2672cb9](https://github.com/tomdaniels/plex-requests-api/commit/2672cb9))
+* **package.json:** update script ([56a8763](https://github.com/tomdaniels/plex-requests-api/commit/56a8763))
+
 ## [1.4.2](https://github.com/tomdaniels/plex-requests-api/compare/v1.4.1...v1.4.2) (2019-03-07)
 
 
