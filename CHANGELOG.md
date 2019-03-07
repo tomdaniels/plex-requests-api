@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.2](https://github.com/tomdaniels/plex-requests-api/compare/v1.4.1...v1.4.2) (2019-03-07)
+
+
+### Bug Fixes
+
+* whitespace ([77225fe](https://github.com/tomdaniels/plex-requests-api/commit/77225fe))
+
 ## [1.4.1](https://github.com/tomdaniels/plex-requests-api/compare/v1.4.0...v1.4.1) (2019-03-06)
 
 
